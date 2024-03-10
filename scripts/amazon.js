@@ -1,3 +1,16 @@
+/* Logic and steps 
+1) Main idea of JavaScript
+  a) Save the data
+  b) Generate the HTML
+  c) Make it interactive
+
+2) Save the data
+  a) In this project we have three products already on the page which means we already have HTML of one entire product which includes image, rating, name and price. In real life we need to write this HTML and CSS.
+  -- How to find the code?s
+        You can find the code by clicking on "inspect element"
+*/
+
+
 
 
 let productsHTML = '';

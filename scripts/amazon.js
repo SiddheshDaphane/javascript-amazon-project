@@ -14,7 +14,16 @@
         To generate HTML for each product, we need to loop through our database. In this project we have saved our data in "products.js" file and varibale is "products". 
         Now "products" is array and in that array we have save all the products in object form. N Because "products" is array we can use "forEach" method to do that. We did excatly that. We used "forEach" and created a function and gave parameter as "product". So basically, it will loop through "products" array and then save each object in "product" in each iteration.
         Now we have copied all HTML of a single product div in that function using " `` " as below. Now we want multiple product with different images, different name, different rating and different price to get add on page and that's why we used "${product.image}, {product.name}" etc and not {products.name} because we are looping array and storing every object in "product" that's why. We used "toFixed(2)" to show price upto 2 decimal places.
-        Now we need show all this HTML of differnet products on webpage and that's why we need to use DOM. We used "document.querySelector()" and targeted grid container of all products. Now we need to change HTML of that grid class using ".innerHTML". To change all this HTML, we need to save it in one variable and then we can use that variable to change HTML of grid class. 
+        Now we need show all this HTML of differnet products on webpage and that's why we need to use DOM. We used "document.querySelector()" and targeted grid container of all products. Now we need to change HTML of that grid class using ".innerHTML". To change all this HTML, we need to save it in one variable and then we can use that variable to change HTML of grid class. After generating HTML for each product we can delete it from ".html" file.
+
+3) Now let's make it interactive by adding products in cart.
+    So bascially we need to add our product once we clicked on "Add to cart" button. Which basically means we need to add "Event listner" to it. 
+    An event listener is a function in JavaScript that waits for an event to occur then responds to it.
+  -- Here is an IMP question though, when we clicked "Add to cart"  
+      button, how do we know which product to add?
+      To solve this problem we have HTML attribute called "Data Attribute"
+  -- DATA ATTRIBUTE
+        It is just another HTML attribute and it allows us to attach any information to an element.
 */
 
 
@@ -84,6 +93,8 @@ document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click',() => {
       const productId = button.dataset.productId; // productId is from "Add to cart" button where we gave "data-product-id" after class.
+      // "dataset" property give all the data attribute that attached to "product.id" button.
+      // So to access the "productId" we just need to write "button.dataset.productId".
 
       let matchingItem;
 

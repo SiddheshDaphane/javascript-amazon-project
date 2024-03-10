@@ -23,8 +23,19 @@
       button, how do we know which product to add?
       To solve this problem we have HTML attribute called "Data Attribute"
   -- DATA ATTRIBUTE
-        It is just another HTML attribute and it allows us to attach any information to an element.
-*/
+        It is just another HTML attribute and it allows us to attach any information to an element. By doing this we will know which product are we adding in the cart. We are using ID as data attribute here. Each product have different ID.
+    After attaching DATA ATTRIBUTE we crated a new "cart.js" file and decleared "cart" as array. Now we are looping through each button using "forEach()" and then adding "event listner" to each button. We we click it, we storig the "productId" in a variable because we want to check it that product already exist in the cart or not. If it exis in the cart then we are adding quantity of it by 1 and if it doesn't exist then we are using "push" method to add it into the array called "cart".
+
+Now we have completed all 3 steps and lastly we need to make "cart quantity" interactive. How can we do that?
+    steps: 
+    1) Calculate the quantity
+    2) Put the quantity on the page
+
+  -- How to calculate the quantity?
+    "cart" variable is array and we can loop through it using "forEach()" and we can add all quantity in an variable
+  -- How to put on the page?
+      We can use DOM and ".innerHTML" = quantity to put all quantity on the page and before all this we need to make quantity 0 so that eveytime we open page it will get reset to 0.
+*/ 
 
 
 

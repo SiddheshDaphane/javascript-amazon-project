@@ -8,6 +8,13 @@
   a) In this project we have three products already on the page which means we already have HTML of one entire product which includes image, rating, name and price. In real life we need to write this HTML and CSS.
   -- How to find the code?s
         You can find the code by clicking on "inspect element"
+  -- How to add multiple products on page?
+        We can copy paste the HTML for each product but that is not feasible at all. We a code that will generate on it's own eveytime when product gets added to our page. Which means we need to generate our HTML in JS.
+  -- How to generate HTML is JS?
+        To generate HTML for each product, we need to loop through our database. In this project we have saved our data in "products.js" file and varibale is "products". 
+        Now "products" is array and in that array we have save all the products in object form. N Because "products" is array we can use "forEach" method to do that. We did excatly that. We used "forEach" and created a function and gave parameter as "product". So basically, it will loop through "products" array and then save each object in "product" in each iteration.
+        Now we have copied all HTML of a single product div in that function using " `` " as below. Now we want multiple product with different images, different name, different rating and different price to get add on page and that's why we used "${product.image}, {product.name}" etc and not {products.name} because we are looping array and storing every object in "product" that's why. We used "toFixed(2)" to show price upto 2 decimal places.
+        Now we need show all this HTML of differnet products on webpage and that's why we need to use DOM. We used "document.querySelector()" and targeted grid container of all products. Now we need to change HTML of that grid class using ".innerHTML". To change all this HTML, we need to save it in one variable and then we can use that variable to change HTML of grid class. 
 */
 
 

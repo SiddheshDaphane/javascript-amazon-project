@@ -56,6 +56,14 @@
       </div>
     </div>
     
+    <!-- 
+Right now we are using 3 JS files to run our code. Due to this it cause naming conflict which basically means that whatever variables are used in any one of the file, we can't use it in any other file. E.g. we used "cart" variable in "cart.js" and now we cannot use that varibale in "amazon.js" 
+
+-- How can we solve this problem? We need to use "Modules".
+      In modules, a variable is only present in that file. Which means "Cart" variable is present in that "cart.js" only and that's why we can also declear "cart" variable in "amazon.js"
+
+-->
+
     <script src="data/cart.js"></script>
     <script src="data/products.js"></script>
     <script src="scripts/amazon.js"></script>

@@ -38,9 +38,11 @@ Now we have completed all 3 steps and lastly we need to make "cart quantity" int
 */ 
 
 
-import {cart} from '../data/cart.js'; // importing variable from "cart.js" file.
+import {cart, addToCart} from '../data/cart.js'; // importing variable from "cart.js" file.
 // ".." => move ouside of the current folder
 // "data" => folder name
+
+import {products} from '../data/products.js'
 
 let productsHTML = '';
 
@@ -102,38 +104,28 @@ products.forEach((product) => {
 document.querySelector('.js-products-grid')
   .innerHTML = productsHTML;
 
-document.querySelectorAll('.js-add-to-cart')
-  .forEach((button) => {
-    button.addEventListener('click',() => {
-      const productId = button.dataset.productId; // productId is from "Add to cart" button where we gave "data-product-id" after class.
-      // "dataset" property give all the data attribute that attached to "product.id" button.
-      // So to access the "productId" we just need to write "button.dataset.productId".
-
-      let matchingItem;
-
-      cart.forEach((item) => {
-        if (productId === item.productId) {
-          matchingItem = item;
-        }
-      });
-
-      if (matchingItem) {
-        matchingItem.quantity += 1;
-      } else {
-        cart.push({
-          productId: productId,
-          quantity: 1
-        });
-      }
-
+  
+  function updateCartQuantity() {
       let cartQuantity = 0; 
       
-      cart.forEach((item) => {
-        cartQuantity += item.quantity;
+      cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
       })
 
       document.querySelector('.js-cart-quantity')
         .innerHTML = cartQuantity;
+  }
+
+document.querySelectorAll('.js-add-to-cart')
+  .forEach((button) => {
+    button.addEventListener('click',() => {
+      const productId = button.dataset.productId; 
+      // productId is from "Add to cart" button where we gave "data-product-id" after class.
+      // "dataset" property give all the data attribute that attached to "product.id" button.
+      // So to access the "productId" we just need to write "button.dataset.productId".
+      
+      addToCart(productId);
+      updateCartQuantity();
 
     });
 });

@@ -38,7 +38,9 @@ Now we have completed all 3 steps and lastly we need to make "cart quantity" int
 */ 
 
 
-
+import {cart} from '../data/cart.js'; // importing variable from "cart.js" file.
+// ".." => move ouside of the current folder
+// "data" => folder name
 
 let productsHTML = '';
 

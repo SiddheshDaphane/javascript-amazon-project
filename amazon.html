@@ -62,10 +62,21 @@ Right now we are using 3 JS files to run our code. Due to this it cause naming c
 -- How can we solve this problem? We need to use "Modules".
       In modules, a variable is only present in that file. Which means "Cart" variable is present in that "cart.js" only and that's why we can also declear "cart" variable in "amazon.js"
 
+-- How to create a Module
+      1) Create a file
+      2) Don't load the file with <script>
+      By doing this, any variable we create inside the file, will be conatined inside the file.  
+
+-- But how can we call "cart" varibale which is present in the "cart.js" file? Because we are running file using <script> we are getting an error that "cart" variable is not defined.       
+
+-- How to get a variable out of a file?
+    1) Add type="module" attribute
+    2) Export
+    3) Import  
 -->
 
-    <script src="data/cart.js"></script>
+   <!-- <script src="data/cart.js"></script> --> 
     <script src="data/products.js"></script>
-    <script src="scripts/amazon.js"></script>
+    <script type="module" src="scripts/amazon.js"></script>
   </body>
 </html>
